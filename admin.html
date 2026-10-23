@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0f0f10" />
+  <title>Panel | FNS Autos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <main class="login" id="viewLogin" hidden>
+    <form class="login__box" id="loginForm">
+      <div class="logo"><span class="logo__fns">FNS</span><span class="logo__autos">AUTOS</span></div>
+      <p class="login__sub">Panel de administración</p>
+      <label>Usuario<input name="user" autocomplete="username" required /></label>
+      <label>Contraseña<input name="pass" type="password" autocomplete="current-password" required /></label>
+      <p class="form-error" id="loginError"></p>
+      <button class="btn btn--primary btn--block" type="submit">Ingresar</button>
+      <a class="login__back" href="/">← Volver al sitio</a>
+    </form>
+  </main>
+
+  <!-- PANEL -->
+  <div id="viewPanel" hidden>
+    <header class="topbar">
+      <div class="logo"><span class="logo__fns">FNS</span><span class="logo__autos">AUTOS</span></div>
+      <div class="topbar__actions">
+        <a class="btn btn--ghost btn--sm" href="/" target="_blank">Ver sitio</a>
+        <button class="btn btn--ghost btn--sm" id="logout">Salir</button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="head">
+        <div>
+          <h1>Mis autos</h1>
+          <p class="muted" id="stats"></p>
+        </div>
+        <button class="btn btn--primary" id="btnNew">+ Cargar auto</button>
+      </div>
+
+      <div class="tabs" id="tabs">
+        <button class="tab is-active" data-f="todos">Todos</button>
+        <button class="tab" data-f="disponible">Disponibles</button>
+        <button class="tab" data-f="reservado">Reservados</button>
+        <button class="tab" data-f="vendido">Vendidos</button>
+        <button class="tab" data-f="oculto">Ocultos</button>
+      </div>
+
+      <ul class="list" id="list"></ul>
+      <p class="empty" id="empty" hidden>No hay autos en esta lista.</p>
+    </main>
+  </div>
+
+  <!-- EDITOR -->
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet__backdrop" data-cancel></div>
+    <form class="sheet__box" id="editor" novalidate>
+      <header class="sheet__head">
+        <h2 id="editorTitle">Cargar auto</h2>
+        <button type="button" class="icon-btn" data-cancel aria-label="Cerrar">×</button>
+      </header>
+
+      <div class="sheet__body">
+        <section class="field-group">
+          <h3>Fotos</h3>
+          <p class="hint">La primera es la portada. Se achican solas antes de subirse.</p>
+          <div class="photos" id="photos"></div>
+          <label class="upload" id="uploadLabel">
+            <input type="file" accept="image/*" multiple id="fileInput" />
+            <span>📷 Agregar fotos</span>
+          </label>
+          <p class="hint" id="uploadStatus"></p>
+        </section>
+
+        <section class="field-group grid2">
+          <label>Marca<input name="marca" required placeholder="Ej: Toyota" /></label>
+          <label>Modelo<input name="modelo" required placeholder="Ej: Hilux SRV" /></label>
+          <label>Año<input name="anio" type="number" inputmode="numeric" min="1950" max="2100" required /></label>
+          <label>Kilómetros<input name="km" type="text" inputmode="numeric" placeholder="0" /></label>
+          <label>Tipo
+            <select name="tipo">
+              <option value="auto">Auto</option>
+              <option value="suv">SUV</option>
+              <option value="pickup">Pick-up</option>
+              <option value="utilitario">Utilitario</option>
+              <option value="moto">Moto</option>
+            </select>
+          </label>
+          <label>Precio (solo para vos)<input name="precio" type="text" inputmode="numeric" placeholder="$" /></label>
+        </section>
+
+        <section class="field-group">
+          <label>Descripción (opcional)
+            <textarea name="descripcion" rows="3" maxlength="600" placeholder="Ej: Único dueño, service al día, cubiertas nuevas"></textarea>
+          </label>
+        </section>
+
+        <section class="field-group">
+          <h3>Estado</h3>
+          <div class="segmented" id="estadoSeg">
+            <label><input type="radio" name="estado" value="disponible" checked /><span>Disponible</span></label>
+            <label><input type="radio" name="estado" value="reservado" /><span>Reservado</span></label>
+            <label><input type="radio" name="estado" value="vendido" /><span>Vendido</span></label>
+            <label><input type="radio" name="estado" value="oculto" /><span>Oculto</span></label>
+          </div>
+        </section>
+
+        <section class="field-group switches">
+          <label class="switch"><input type="checkbox" name="destacado" /><span></span>Mostrar en destacados</label>
+          <label class="switch"><input type="checkbox" name="mostrarPrecio" /><span></span>Mostrar precio en la web</label>
+        </section>
+
+        <p class="form-error" id="editorError"></p>
+      </div>
+
+      <footer class="sheet__foot">
+        <button type="button" class="btn btn--danger" id="btnDelete">Eliminar</button>
+        <button type="submit" class="btn btn--primary" id="btnSave">Guardar</button>
+      </footer>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

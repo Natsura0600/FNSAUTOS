@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FNS Autos | Compra, venta y permutas</title>
+  <meta name="description" content="FNS Autos: autos usados y 0 km con financiación 100%, permutas y gestoría incluida. Consultá por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="FNS Autos">
+        <span class="logo__fns">FNS</span><span class="logo__autos">AUTOS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#destacados">Destacados</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#" class="btn btn--wa btn--sm js-wa" data-msg="Hola FNS Autos! Quería hacer una consulta.">WhatsApp</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" style="background-image:url('img/308.jpg')"></div>
+    <div class="hero__shade"></div>
+    <div class="container hero__content">
+      <p class="eyebrow reveal">Compra · Venta · Permutas</p>
+      <h1 class="hero__title reveal">Tu próximo auto<br /><em>te está esperando.</em></h1>
+      <p class="hero__text reveal">Financiación hasta el 100%, tomamos tu usado y nos ocupamos de toda la gestoría. Vos solo elegí el auto.</p>
+      <div class="hero__actions reveal">
+        <a href="#destacados" class="btn btn--primary">Ver autos</a>
+        <a href="#" class="btn btn--ghost js-wa" data-msg="Hola FNS Autos! Quería consultar por financiación.">Consultar financiación</a>
+      </div>
+      <ul class="hero__chips reveal">
+        <li>Financiación 100%</li><li>Permutas</li><li>Contado</li><li>Gestoría incluida</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DESTACADOS -->
+  <section class="section" id="destacados">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Stock</p>
+        <h2 class="section__title">Algunos de nuestros autos más destacados</h2>
+        <p class="section__text">Una muestra de lo que tenemos en el salón. Consultanos por precio, financiación o permuta directo por WhatsApp.</p>
+      </div>
+
+      <div class="filters" id="filters"><!-- Se arman según el stock --></div>
+
+      <div class="grid" id="grid">
+        <div class="card card--skeleton"></div><div class="card card--skeleton"></div><div class="card card--skeleton"></div>
+      </div>
+
+      <div class="show-all" id="showAllWrap" hidden>
+        <button class="btn btn--ghost" id="showAll">Ver todo el stock</button>
+      </div>
+
+      <p class="more reveal">¿No encontrás lo que buscás? Tenemos más unidades en stock.
+        <a href="#" class="js-wa" data-msg="Hola FNS Autos! Estoy buscando un auto, ¿qué tienen disponible?">Contanos qué buscás →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="section section--dark" id="beneficios">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Por qué FNS</p>
+        <h2 class="section__title">Comprar tu auto, sin vueltas</h2>
+      </div>
+      <div class="benefits">
+        <article class="benefit reveal">
+          <span class="benefit__num">01</span>
+          <h3>Financiación 100%</h3>
+          <p>Te llevás el auto financiando el total. Armamos el plan que mejor se adapte a vos.</p>
+        </article>
+        <article class="benefit reveal">
+          <span class="benefit__num">02</span>
+          <h3>Permutas</h3>
+          <p>Tomamos tu usado como parte de pago. Traelo y lo tasamos en el momento.</p>
+        </article>
+        <article class="benefit reveal">
+          <span class="benefit__num">03</span>
+          <h3>Contado</h3>
+          <p>Si pagás de contado, consultanos: siempre hay una propuesta para vos.</p>
+        </article>
+        <article class="benefit reveal">
+          <span class="benefit__num">04</span>
+          <h3>Gestoría incluida</h3>
+          <p>Transferencia y papeles corren por nuestra cuenta. Salís manejando, sin trámites.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container contact">
+      <div class="contact__info reveal">
+        <p class="eyebrow">Visitanos</p>
+        <h2 class="section__title">Te esperamos en el salón</h2>
+        <ul class="contact__list">
+          <li><span>Dirección</span><a href="https://maps.google.com/?q=Chávez+129+Luján+Buenos+Aires" target="_blank" rel="noopener">Chávez 129, Luján</a></li>
+          <li><span>Horarios</span>De 9 a 19 hs</li>
+          <li><span>WhatsApp</span><a href="#" class="js-wa" data-msg="Hola FNS Autos! Quería hacer una consulta.">2323 585068</a></li>
+          <li><span>Instagram</span><a href="https://instagram.com/fnsautos" target="_blank" rel="noopener">@fnsautos</a></li>
+        </ul>
+        <a href="#" class="btn btn--wa js-wa" data-msg="Hola FNS Autos! Quería hacer una consulta.">Escribinos por WhatsApp</a>
+      </div>
+      <div class="contact__map reveal">
+        <iframe title="Mapa FNS Autos" loading="lazy"
+          src="https://maps.google.com/maps?q=Ch%C3%A1vez%20129%2C%20Luj%C3%A1n%2C%20Buenos%20Aires&z=15&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#inicio" class="logo"><span class="logo__fns">FNS</span><span class="logo__autos">AUTOS</span></a>
+      <p>© <span id="year"></span> FNS Autos · Todos los derechos reservados</p>
+      <p class="footer__credit">Sitio desarrollado por <a href="https://picturewebdev.vercel.app" target="_blank" rel="noopener">Picture Web Dev</a></p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="#" class="wa-float js-wa" data-msg="Hola FNS Autos! Quería hacer una consulta." aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-5.9 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <!-- MODAL DETALLE -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close aria-label="Cerrar">×</button>
+      <div class="gallery">
+        <div class="gallery__main">
+          <img id="modalImg" src="" alt="" />
+          <button class="gallery__nav gallery__nav--prev" id="galPrev" aria-label="Foto anterior">‹</button>
+          <button class="gallery__nav gallery__nav--next" id="galNext" aria-label="Foto siguiente">›</button>
+          <span class="gallery__count" id="galCount"></span>
+        </div>
+        <div class="gallery__thumbs" id="galThumbs"></div>
+      </div>
+      <div class="modal__body">
+        <p class="eyebrow" id="modalType"></p>
+        <h3 id="modalTitle"></h3>
+        <ul class="specs" id="modalSpecs"></ul>
+        <p class="modal__desc" id="modalDesc"></p>
+        <p class="modal__note">Financiación 100% · Permutas · Gestoría incluida</p>
+        <a href="#" class="btn btn--wa btn--block" id="modalWa">Consultar por este auto</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
